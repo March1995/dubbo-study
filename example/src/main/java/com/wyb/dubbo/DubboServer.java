@@ -24,10 +24,11 @@ public class DubboServer {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName("dubbo");
         protocolConfig.setSerialization("fastjson");
-        protocolConfig.setPort(-1);//20880
+//        protocolConfig.setPort(-1);//20880
+        protocolConfig.setPort(20880);//20880
+//        protocolConfig.setPort(20881);//20880
         RegistryConfig registryConfig
                 = new RegistryConfig("zookeeper://192.168.36.54:2181");
-
 
 
         ServiceConfig serviceConfig = new ServiceConfig();
@@ -38,7 +39,7 @@ public class DubboServer {
         serviceConfig.setProtocol(protocolConfig);
         serviceConfig.setApplication(applicationConfig);
 //        serviceConfig.setToken(true);
-//        setLoadbalance(serviceConfig);
+        setLoadbalance(serviceConfig);
         serviceConfig.export();
 
         System.out.println("服务已暴露");
