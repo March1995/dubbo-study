@@ -1,0 +1,3 @@
+black=com.wyb.spi.service.dubbo.aop.BlackCar
+red=com.wyb.spi.service.dubbo.aop.RedCar
+com.wyb.spi.service.dubbo.aop.CarWrapper
